@@ -1,7 +1,7 @@
 import { Switch, Route } from 'react-router-dom';
-import ColorButton from './pages/ColorButton';
-import Checkbox from './pages/Checkbox';
-import SummaryForm from './pages/Summary/SummaryForm';
+import ColorButton from './pages/colorButton';
+import Checkbox from './pages/checkbox';
+import SummaryForm from './pages/sundaes-on-demand/summary/SummaryForm';
 
 function App() {
   return (
