@@ -6,6 +6,7 @@ import ToppingOption from './ToppingOption';
 import AlertBanner from '../../../components/AlertBanner';
 import { pricePerItem } from '../../../constants';
 import { useOrderDetails } from '../../../contexts/OrderDetails';
+import { formatCurrency } from '../../../utils';
 
 export default function Options({ optionType }) {
   const [items, setItems] = useState([]);
@@ -27,6 +28,7 @@ export default function Options({ optionType }) {
   }
 
   const ItemComponent = optionType === 'scoops' ? ScoopOption : ToppingOption;
+
   const title = optionType[0].toUpperCase() + optionType.slice(1).toLowerCase();
 
   const optionItems = items.map((item) => (
@@ -43,7 +45,7 @@ export default function Options({ optionType }) {
   return (
     <>
       <h2>{title}</h2>
-      <p>{pricePerItem[optionType]} each</p>
+      <p>{formatCurrency(pricePerItem[optionType])} each</p>
       <p>
         {title} total: {orderDetails.totals[optionType]}
       </p>
